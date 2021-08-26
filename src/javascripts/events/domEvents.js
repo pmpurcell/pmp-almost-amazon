@@ -1,4 +1,7 @@
+import { showAuthors } from '../components/authors';
+import addAuthorForm from '../components/forms/addAuthorForm';
 import addBookForm from '../components/forms/addBookForm';
+import { createAuthor } from '../helpers/data/authorData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -32,7 +35,21 @@ const domEvents = () => {
 
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
+    if (e.target.id.includes('add-author-btn')) {
+      addAuthorForm();
+    }
     // ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
+    if (e.target.id.includes('submit-author')) {
+      e.preventDefault();
+      console.warn('CLICKED SUBMIT AUTHOR', e.target.id);
+      const newAuthor = {
+        first_name: document.querySelector('#firstName').value,
+        last_name: document.querySelector('#lastName').value,
+        email: document.querySelector('#authorEmail').value
+      };
+      console.warn(newAuthor);
+      createAuthor(newAuthor).then((authors) => showAuthors(authors));
+    }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
   });
 };
