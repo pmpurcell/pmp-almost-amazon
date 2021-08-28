@@ -1,4 +1,8 @@
+import { showAuthors } from '../components/authors';
 import signOut from '../helpers/auth/signOut';
+import { getAuthors, favoriteAuthors } from '../helpers/data/authorData';
+import { booksOnSale, getBooks } from '../helpers/data/bookData';
+import { showBooks } from '../components/books';
 
 // navigation events
 const navigationEvents = () => {
@@ -8,12 +12,14 @@ const navigationEvents = () => {
 
   // BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
-    console.warn('Sale Books');
+    console.warn('Clicked Sale Books');
+    booksOnSale().then((books) => showBooks(books));
   });
 
   // ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
     console.warn('All Books');
+    getBooks().then((books) => showBooks(books));
   });
 
   // SEARCH
@@ -29,6 +35,14 @@ const navigationEvents = () => {
 
       document.querySelector('#search').value = '';
     }
+  });
+
+  document.querySelector('#authors').addEventListener('click', () => {
+    getAuthors().then((authors) => showAuthors(authors));
+  });
+
+  document.querySelector('#favoriteAuthors').addEventListener('click', () => {
+    favoriteAuthors().then((authors) => showAuthors(authors));
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors
