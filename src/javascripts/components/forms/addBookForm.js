@@ -23,7 +23,7 @@ const addBookForm = (obj = {}) => {
         <input type="checkbox" class="form-check-input" id="sale" value = "${obj.sale ? 'checked' : ''}">
         <label class="form-check-label" for="sale">On Sale?</label>
       </div>
-      <button type="submit" id=${obj.firebaseKey ? 'update-book--obj.firebaseKey' : 'submit-book'}" class="btn btn-primary">Submit Book</button>
+      <button type="submit" id="${obj.firebaseKey ? `update-book--${obj.firebaseKey}` : 'submit-book'}" class="btn btn-primary">Submit Book</button>
     </form>`;
 
   selectAuthor(`${obj.author_id || ''}`);

@@ -2,7 +2,12 @@ import { showAuthors } from '../components/authors';
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import addBookForm from '../components/forms/addBookForm';
-import { createAuthor, deleteAuthor } from '../helpers/data/authorData';
+import {
+  createAuthor,
+  deleteAuthor,
+  singleAuthor,
+  updateAuthor
+} from '../helpers/data/authorData';
 import {
   createBook,
   deleteBook,
@@ -35,7 +40,7 @@ const domEvents = () => {
       const newBook = {
         title: document.querySelector('#title').value,
         image: document.querySelector('#image').value,
-        price: Number(document.querySelector('#price').value),
+        price: document.querySelector('#price').value,
         sale: document.querySelector('#sale').checked,
         author_id: document.querySelector('#author').value
       };
@@ -58,7 +63,7 @@ const domEvents = () => {
       const bookObject = {
         title: document.querySelector('#title').value,
         image: document.querySelector('#image').value,
-        price: document.querySelector('#price'),
+        price: document.querySelector('#price').value,
         sale: document.querySelector('#sale').checked,
         author_id: document.querySelector('#author').value,
         firebaseKey
@@ -92,6 +97,25 @@ const domEvents = () => {
       createAuthor(newAuthor).then((authors) => showAuthors(authors));
     }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    if (e.target.id.includes('edit-author-btn')) {
+      console.warn('CLICKED EDIT AUTHOR', e.target.id);
+      const [, id] = e.target.id.split('--');
+      singleAuthor(id).then((authorObj) => addAuthorForm(authorObj));
+    }
+    //  EDITING AN AUTHOR
+    if (e.target.id.includes('update-author')) {
+      e.preventDefault();
+      console.warn('AUTHOR UPDATED');
+      const [, firebaseKey] = e.target.id.split('--');
+      const authorObj = {
+        first_name: document.querySelector('#firstName').value,
+        last_name: document.querySelector('#lastName').value,
+        email: document.querySelector('#authorEmail').value,
+        firebaseKey
+      };
+
+      updateAuthor(authorObj).then(showAuthors);
+    }
   });
 };
 
