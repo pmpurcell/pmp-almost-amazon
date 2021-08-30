@@ -91,7 +91,8 @@ const domEvents = () => {
       const newAuthor = {
         first_name: document.querySelector('#firstName').value,
         last_name: document.querySelector('#lastName').value,
-        email: document.querySelector('#authorEmail').value
+        email: document.querySelector('#authorEmail').value,
+        favorite: document.querySelector('#favorite').checked
       };
       console.warn(newAuthor);
       createAuthor(newAuthor).then((authors) => showAuthors(authors));
@@ -111,6 +112,7 @@ const domEvents = () => {
         first_name: document.querySelector('#firstName').value,
         last_name: document.querySelector('#lastName').value,
         email: document.querySelector('#authorEmail').value,
+        favorite: document.querySelector('#favorite').checked,
         firebaseKey
       };
 
