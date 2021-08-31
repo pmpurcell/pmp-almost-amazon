@@ -61,6 +61,13 @@ const booksOnSale = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const authorBooks = (firebaseKey) => new Promise((resolve, reject) => {
+  axios
+    .get(`${dbUrl}/books/.json?orderBy="author_id"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 export {
   getBooks,
   createBook,
@@ -68,4 +75,5 @@ export {
   deleteBook,
   singleBook,
   updateBook,
+  authorBooks,
 };
