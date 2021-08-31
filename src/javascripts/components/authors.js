@@ -1,7 +1,9 @@
 // FIXME: STUDENTS show your authors
 
+import clearDom from '../helpers/clearDom';
+
 const showAuthors = (array) => {
-  document.querySelector('#store').innerHTML = '';
+  clearDom();
   // CREATE A BUTTON TO ADD BOOKS
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-author-btn">Add an Author</button>';
 
@@ -13,8 +15,9 @@ const showAuthors = (array) => {
         <h5 class="card-title">${item.first_name} ${item.last_name}</h5>
         <p class="card-text bold">${item.email}</p>
         <hr>
-        <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-author-btn--${item.firebaseKey}">Edit Author</button>
-        <button class="btn btn-danger" id="delete-author--${item.firebaseKey}">Delete Author</button>
+        <i class="btn btn-success fas fa-eye" id="view-author-btn--${item.firebaseKey}"></i>
+        <i id="edit-author-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+        <i id="delete-author--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
         </div>
       </div>
     `;
