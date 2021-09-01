@@ -9,6 +9,7 @@ const viewBook = (obj) => {
        <div class="mt-5">
          <i id="edit-book-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
          <i id="delete-book--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+         <i id="review-book--${obj.firebaseKey}" class="btn btn-warning fas fa-comment-alt"></i>
        </div>
      </div>
      <div class="text-white ms-5 details">
@@ -19,6 +20,7 @@ const viewBook = (obj) => {
        <p>${obj.sale ? `<span class="badge bg-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> 
          $${obj.price}` : `$${obj.price}`}</p>      
         </div>
+        <div id="bookReviews"><id>
       </div>`;
 };
 
