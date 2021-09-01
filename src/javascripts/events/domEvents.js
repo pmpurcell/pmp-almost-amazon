@@ -6,7 +6,6 @@ import viewAuthor from '../components/viewAuthor';
 import viewBook from '../components/viewBook';
 import {
   createAuthor,
-  deleteAuthor,
   singleAuthor,
   updateAuthor
 } from '../helpers/data/authorData';
@@ -16,7 +15,7 @@ import {
   singleBook,
   updateBook
 } from '../helpers/data/bookData';
-import { viewBookDetails, viewAuthorDetails } from '../helpers/data/mergedData';
+import { viewBookDetails, viewAuthorDetails, deleteAuthorBooks } from '../helpers/data/mergedData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -87,7 +86,7 @@ const domEvents = () => {
         console.warn('CLICKED DELETE AUTHOR', e.target.id);
         const [, id] = e.target.id.split('--');
 
-        deleteAuthor(id).then((authors) => showAuthors(authors));
+        deleteAuthorBooks(id).then((authors) => showAuthors(authors));
       }
     }
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
@@ -115,9 +114,9 @@ const domEvents = () => {
     }
     // VIEW DETAILS ON AUTHOR
     if (e.target.id.includes('view-author-btn')) {
-      const [, id] = e.target.id.split('--');
-      console.warn(id);
-      viewAuthorDetails(id).then(viewAuthor);
+      const [, firebaseKey] = e.target.id.split('--');
+      console.warn(firebaseKey);
+      viewAuthorDetails(firebaseKey).then(viewAuthor);
     }
     //  EDITING AN AUTHOR
     if (e.target.id.includes('update-author')) {

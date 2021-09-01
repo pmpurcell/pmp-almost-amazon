@@ -18,6 +18,15 @@ const viewAuthor = (obj) => {
        <div id="author-books"></div>   
         </div>
       </div>`;
+
+  obj.bookObject.forEach((item) => {
+    document.querySelector('#author-books').innerHTML += `
+          <div id='authorBookCard'>
+            <h6>${item.title}</h6>
+            <img src=${item.image} alt=${item.title} style="width: 150px;">
+          </div>
+          `;
+  });
 };
 
 export default viewAuthor;
