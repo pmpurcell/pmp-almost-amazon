@@ -85,5 +85,10 @@ body {
 
 #author-books{
   display: flex;
-  margin: 20px;
+  justify-content: space-evenly;
+}
+
+#authorBookCard{
+  display: flex;
+  flex-direction: column;
 }

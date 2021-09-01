@@ -2,6 +2,7 @@ import { showAuthors } from '../components/authors';
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import addBookForm from '../components/forms/addBookForm';
+import reviewBookForm from '../components/forms/reviewBookForm';
 import viewAuthor from '../components/viewAuthor';
 import viewBook from '../components/viewBook';
 import {
@@ -73,6 +74,23 @@ const domEvents = () => {
       updateBook(bookObject).then(showBooks);
     }
 
+    // REVIEW A BOOK
+    if (e.target.id.includes('review-book')) {
+      console.warn('CLICKED REVIEW BOOK');
+      const [, firebaseKey] = e.target.id.split('--');
+      reviewBookForm(firebaseKey);
+    }
+
+    // SUBMIT REVIEW
+    if (e.target.id.includes('submit-review')) {
+      console.warn('REVIEW SUBMITTED');
+      const reviewData = {
+        rating: document.querySelector('#book-rating').value,
+        reviewtext: document.querySelector('#review-text').value
+      };
+      console.warn(reviewData);
+    }
+
     // VIEW DETAILS ON BOOK
     if (e.target.id.includes('view-book-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
@@ -115,7 +133,6 @@ const domEvents = () => {
     // VIEW DETAILS ON AUTHOR
     if (e.target.id.includes('view-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn(firebaseKey);
       viewAuthorDetails(firebaseKey).then(viewAuthor);
     }
     //  EDITING AN AUTHOR
