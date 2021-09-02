@@ -1,5 +1,6 @@
 import { deleteAuthor, singleAuthor } from './authorData';
 import { singleBook, authorBooks, deleteBook } from './bookData';
+// import { bookReviews } from './reviewData';
 
 const viewBookDetails = (bookFirebaseKey) => new Promise((resolve, reject) => {
   singleBook(bookFirebaseKey)
@@ -10,6 +11,18 @@ const viewBookDetails = (bookFirebaseKey) => new Promise((resolve, reject) => {
         });
     }).catch(reject);
 });
+
+// VIEW MY BOOK REVIEWS
+
+// const viewBookReviews = (bookFirebaseKey) => new Promise((resolve, reject) => {
+//   singleBook(bookFirebaseKey)
+//     .then((bookObject) => {
+//       bookReviews(bookObject.firebaseKey)
+//         .then((reviewObj) => {
+//           resolve({ reviewObj, ...bookObject });
+//         });
+//     }).catch(reject);
+// });
 
 const viewAuthorDetails = (authorFirebaseKey) => new Promise((resolve, reject) => {
   singleAuthor(authorFirebaseKey)
@@ -29,4 +42,9 @@ const deleteAuthorBooks = (authorId) => new Promise((resolve, reject) => {
   }).catch(reject);
 });
 
-export { viewBookDetails, viewAuthorDetails, deleteAuthorBooks };
+export {
+  viewBookDetails,
+  viewAuthorDetails,
+  deleteAuthorBooks,
+  // viewBookReviews
+};

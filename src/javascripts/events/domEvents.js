@@ -16,7 +16,13 @@ import {
   singleBook,
   updateBook
 } from '../helpers/data/bookData';
-import { viewBookDetails, viewAuthorDetails, deleteAuthorBooks } from '../helpers/data/mergedData';
+import {
+  viewBookDetails,
+  viewAuthorDetails,
+  deleteAuthorBooks,
+  // viewBookReviews
+} from '../helpers/data/mergedData';
+import { createReview } from '../helpers/data/reviewData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -51,14 +57,14 @@ const domEvents = () => {
       createBook(newBook).then((books) => showBooks(books));
     }
 
-    // CLICK EVENT FOR EDITING(Modal) A BOOK
+    // CLICK EVENT FOR EDITING A BOOK
     if (e.target.id.includes('edit-book-btn')) {
       console.warn('CLICKED EDIT BOOK', e.target.id);
       const [, id] = e.target.id.split('--');
       singleBook(id).then((bookObj) => addBookForm(bookObj));
     }
 
-    // EDITING A BOOK
+    // SUBMITTING AN EDIT
 
     if (e.target.id.includes('update-book')) {
       e.preventDefault();
@@ -78,17 +84,21 @@ const domEvents = () => {
     if (e.target.id.includes('review-book')) {
       console.warn('CLICKED REVIEW BOOK');
       const [, firebaseKey] = e.target.id.split('--');
-      reviewBookForm(firebaseKey);
+      singleBook(firebaseKey).then((bookObject) => reviewBookForm(bookObject));
     }
 
     // SUBMIT REVIEW
     if (e.target.id.includes('submit-review')) {
       console.warn('REVIEW SUBMITTED');
+      const [, firebaseKey] = e.target.id.split('--');
       const reviewData = {
         rating: document.querySelector('#book-rating').value,
-        reviewtext: document.querySelector('#review-text').value
+        reviewtext: document.querySelector('#review-text').value,
+        book_id: firebaseKey
       };
       console.warn(reviewData);
+      createReview(reviewData);
+      viewBookDetails(firebaseKey).then(viewBook);
     }
 
     // VIEW DETAILS ON BOOK

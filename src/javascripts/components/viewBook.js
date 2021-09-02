@@ -1,4 +1,5 @@
 import clearDom from '../helpers/clearDom';
+import { reviewsToPage } from '../helpers/data/reviewData';
 
 const viewBook = (obj) => {
   clearDom();
@@ -20,8 +21,10 @@ const viewBook = (obj) => {
        <p>${obj.sale ? `<span class="badge bg-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> 
          $${obj.price}` : `$${obj.price}`}</p>      
         </div>
-        <div id="bookReviews"><id>
+        <div id="bookReviews"><>
       </div>`;
+
+  reviewsToPage(obj.firebaseKey);
 };
 
 export default viewBook;
