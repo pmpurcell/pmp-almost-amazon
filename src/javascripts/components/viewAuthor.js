@@ -1,4 +1,5 @@
 import clearDom from '../helpers/clearDom';
+import { quotesToPage } from '../helpers/data/quoteData';
 
 const viewAuthor = (obj) => {
   clearDom();
@@ -11,6 +12,7 @@ const viewAuthor = (obj) => {
          <i id="delete-book--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
        </div>
      </div>
+     <div id= "quotes"></div>
      <div class="text-white ms-5 details">
        <h5>${obj.first_name} ${obj.last_name}</h5>
        <p>${obj.email || ''}</p>
@@ -30,6 +32,8 @@ const viewAuthor = (obj) => {
           </div>
           `;
   });
+
+  quotesToPage(obj.firebaseKey);
 };
 
 export default viewAuthor;

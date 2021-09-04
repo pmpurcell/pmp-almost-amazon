@@ -2,6 +2,7 @@ import { showAuthors } from '../components/authors';
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import addBookForm from '../components/forms/addBookForm';
+import addQuoteForm from '../components/forms/addQuoteForm';
 import reviewBookForm from '../components/forms/reviewBookForm';
 import viewAuthor from '../components/viewAuthor';
 import viewBook from '../components/viewBook';
@@ -22,6 +23,7 @@ import {
   deleteAuthorBooks,
   // viewBookReviews
 } from '../helpers/data/mergedData';
+import { createQuote } from '../helpers/data/quoteData';
 import { createReview } from '../helpers/data/reviewData';
 
 const domEvents = () => {
@@ -137,12 +139,29 @@ const domEvents = () => {
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
     if (e.target.id.includes('edit-author-btn')) {
       console.warn('CLICKED EDIT AUTHOR', e.target.id);
-      const [, id] = e.target.id.split('--');
-      singleAuthor(id).then((authorObj) => addAuthorForm(authorObj));
+      const [, firebaseKey] = e.target.id.split('--');
+      singleAuthor(firebaseKey).then((authorObj) => addAuthorForm(authorObj));
     }
     // VIEW DETAILS ON AUTHOR
     if (e.target.id.includes('view-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
+      viewAuthorDetails(firebaseKey).then(viewAuthor);
+    }
+    // ADDING A QUOTE FOR AN AUTHOR
+    if (e.target.id.includes('add-quote')) {
+      console.warn('ADDING AUTHOR QUOTE', e.target.id);
+      const [, firebaseKey] = e.target.id.split('--');
+      singleAuthor(firebaseKey).then((authorObject) => addQuoteForm(authorObject));
+    }
+    // SUBMITTING A NEW QUOTE
+    if (e.target.id.includes('submit-quote')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const quoteData = {
+        quotetext: document.querySelector('#quote-text').value,
+        author_id: firebaseKey
+      };
+      createQuote(quoteData);
+      console.warn(quoteData);
       viewAuthorDetails(firebaseKey).then(viewAuthor);
     }
     //  EDITING AN AUTHOR
