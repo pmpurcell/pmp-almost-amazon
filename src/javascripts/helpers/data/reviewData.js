@@ -32,8 +32,8 @@ const renderBookReviews = (bookKey) => {
   bookKey.forEach((element) => {
     document.querySelector('#bookReviews').innerHTML += `
             <div id="review-card">
-          <p>${element.rating}</p>
-          <p>${element.reviewtext}</p>
+              <p>${element.rating}</p>
+              <p>${element.reviewtext}</p>
             <div>
             `;
   });
