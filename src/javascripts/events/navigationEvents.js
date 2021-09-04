@@ -5,21 +5,21 @@ import { booksOnSale, getBooks } from '../helpers/data/bookData';
 import { showBooks } from '../components/books';
 
 // navigation events
-const navigationEvents = () => {
+const navigationEvents = (uid) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   // BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
-    console.warn('Clicked Sale Books');
-    booksOnSale().then((books) => showBooks(books));
+    console.warn(uid);
+    booksOnSale(uid).then((books) => showBooks(books));
   });
 
   // ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
     console.warn('All Books');
-    getBooks().then((books) => showBooks(books));
+    getBooks(uid).then((books) => showBooks(books));
   });
 
   // SEARCH
@@ -38,11 +38,11 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#authors').addEventListener('click', () => {
-    getAuthors().then((authors) => showAuthors(authors));
+    getAuthors(uid).then((authors) => showAuthors(authors));
   });
 
   document.querySelector('#favoriteAuthors').addEventListener('click', () => {
-    favoriteAuthors().then((authors) => showAuthors(authors));
+    favoriteAuthors(uid).then((authors) => showAuthors(authors));
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors

@@ -6,7 +6,8 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fchicken.jpg?alt=media&token=77e7cf36-4f72-4ee0-a487-dd1d366ced63",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi eget leo tincidunt pharetra. Etiam dictum malesuada tempus. Aenean quis congue mauris. In velit tortor, molestie vel nisl a, iaculis pharetra erat. Integer non est sed ligula efficitur egestas id eget sem. Donec purus libero, auctor eget laoreet sit amet, iaculis quis mauris. Nullam nec facilisis nisi, at tempor ipsum. Donec gravida arcu ac est interdum suscipit. Etiam tempus finibus purus a sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas euismod augue consequat cursus hendrerit. Nam porttitor sem et faucibus vestibulum.",
     "sale": false,
-    "author_id": "-MTpcli73mfiIqW0lpPe"
+    "author_id": "-MTpcli73mfiIqW0lpPe",
+    "user_id": "dUcbyqxqR9OwgqMkdNLX5oeHoHr1"
   },
   "-MTpclg-BDWqEqyNcYzx": {
     "firebaseKey": "-MTpclg-BDWqEqyNcYzx",
@@ -15,7 +16,8 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fbacon.jpg?alt=media&token=4641983b-59a5-4d1f-8e8e-7f2114f02455",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi eget leo tincidunt pharetra. Etiam dictum malesuada tempus. Aenean quis congue mauris. In velit tortor, molestie vel nisl a, iaculis pharetra erat. Integer non est sed ligula efficitur egestas id eget sem. Donec purus libero, auctor eget laoreet sit amet, iaculis quis mauris. Nullam nec facilisis nisi, at tempor ipsum. Donec gravida arcu ac est interdum suscipit. Etiam tempus finibus purus a sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas euismod augue consequat cursus hendrerit. Nam porttitor sem et faucibus vestibulum.",
     "sale": true,
-    "author_id": "-MTpcli9kmjpvbdr-ckb"
+    "author_id": "-MTpcli9kmjpvbdr-ckb",
+    "user_id": "1234"
   },
   "-MTpclg1yedrHyxkTEvt": {
     "firebaseKey": "-MTpclg1yedrHyxkTEvt",
@@ -24,7 +26,8 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fkale.jpg?alt=media&token=cce4b2dc-4ee5-4e80-93a3-c33d3817880e",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi eget leo tincidunt pharetra. Etiam dictum malesuada tempus. Aenean quis congue mauris. In velit tortor, molestie vel nisl a, iaculis pharetra erat. Integer non est sed ligula efficitur egestas id eget sem. Donec purus libero, auctor eget laoreet sit amet, iaculis quis mauris. Nullam nec facilisis nisi, at tempor ipsum. Donec gravida arcu ac est interdum suscipit. Etiam tempus finibus purus a sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas euismod augue consequat cursus hendrerit. Nam porttitor sem et faucibus vestibulum.",
     "sale": false,
-    "author_id": "-MTpcliA_-GtWZHpb8sf"
+    "author_id": "-MTpcliA_-GtWZHpb8sf",
+    "user_id": "1234"
   },
   "-MTpclg3RLFK-14Pu-YM": {
     "firebaseKey": "-MTpclg3RLFK-14Pu-YM",
@@ -33,7 +36,8 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fanimals.jpeg?alt=media&token=bf85ace1-db04-42c1-82d5-56ce58979721",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi eget leo tincidunt pharetra. Etiam dictum malesuada tempus. Aenean quis congue mauris. In velit tortor, molestie vel nisl a, iaculis pharetra erat. Integer non est sed ligula efficitur egestas id eget sem. Donec purus libero, auctor eget laoreet sit amet, iaculis quis mauris. Nullam nec facilisis nisi, at tempor ipsum. Donec gravida arcu ac est interdum suscipit. Etiam tempus finibus purus a sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas euismod augue consequat cursus hendrerit. Nam porttitor sem et faucibus vestibulum.",
     "sale": false,
-    "author_id": "-MTpcliCeUeUNMpZ-Kog"
+    "author_id": "-MTpcliCeUeUNMpZ-Kog",
+    "user_id": "1243"
   },
   "-MTpclg6Ax7Lg5iq3tOs": {
     "firebaseKey": "-MTpclg6Ax7Lg5iq3tOs",
@@ -42,7 +46,8 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fzombie.jpg?alt=media&token=4e350713-95ba-4dc6-8091-c2fd5bb2bb27",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi eget leo tincidunt pharetra. Etiam dictum malesuada tempus. Aenean quis congue mauris. In velit tortor, molestie vel nisl a, iaculis pharetra erat. Integer non est sed ligula efficitur egestas id eget sem. Donec purus libero, auctor eget laoreet sit amet, iaculis quis mauris. Nullam nec facilisis nisi, at tempor ipsum. Donec gravida arcu ac est interdum suscipit. Etiam tempus finibus purus a sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas euismod augue consequat cursus hendrerit. Nam porttitor sem et faucibus vestibulum.",
     "sale": true,
-    "author_id": "-MTpcliDmrp15A1WIE4U"
+    "author_id": "-MTpcliDmrp15A1WIE4U",
+    "user_id": "dUcbyqxqR9OwgqMkdNLX5oeHoHr1"
   },
   "-MTpclg4KKMZ4FUaEE2b": {
     "firebaseKey": "-MTpclg4KKMZ4FUaEE2b",
@@ -51,6 +56,7 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fgravy.jpg?alt=media&token=1cdec29d-f7d5-4100-bd09-684fe57235e4",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi eget leo tincidunt pharetra. Etiam dictum malesuada tempus. Aenean quis congue mauris. In velit tortor, molestie vel nisl a, iaculis pharetra erat. Integer non est sed ligula efficitur egestas id eget sem. Donec purus libero, auctor eget laoreet sit amet, iaculis quis mauris. Nullam nec facilisis nisi, at tempor ipsum. Donec gravida arcu ac est interdum suscipit. Etiam tempus finibus purus a sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas euismod augue consequat cursus hendrerit. Nam porttitor sem et faucibus vestibulum.",
     "sale": false,
-    "author_id": "-MTpcliGnhDSsyvILIoJ"
+    "author_id": "-MTpcliGnhDSsyvILIoJ",
+    "user_id": "dUcbyqxqR9OwgqMkdNLX5oeHoHr1"
   }
 }
