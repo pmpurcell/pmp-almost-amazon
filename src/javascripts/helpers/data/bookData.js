@@ -5,19 +5,19 @@ import firebaseConfig from '../../../api/apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET BOOKS
-const getBooks = () => new Promise((resolve, reject) => {
+const getBooks = (userId) => new Promise((resolve, reject) => {
   axios
-    .get(`${dbUrl}/books.json`)
+    .get(`${dbUrl}/books.json?orderBy="user_id"&equalTo="${userId}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
 // DELETE BOOK
-const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteBook = (firebaseKey, userId) => new Promise((resolve, reject) => {
   axios
     .delete(`${dbUrl}/books/${firebaseKey}.json`)
     .then(() => {
-      getBooks().then(resolve);
+      getBooks(userId).then(resolve);
     })
     .catch(reject);
 });
@@ -31,7 +31,7 @@ const createBook = (bookObj) => new Promise((resolve, reject) => {
       axios
         .patch(`${dbUrl}/books/${response.data.name}.json`, body)
         .then(() => {
-          getBooks().then(resolve);
+          getBooks(bookObj.user_id).then(resolve);
         });
     })
     .catch((error) => reject(error));
@@ -47,18 +47,21 @@ const singleBook = (firebaseKey) => new Promise((resolve, reject) => {
 // UPDATE BOOK
 const updateBook = (bookObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/books/${bookObj.firebaseKey}.json`, bookObj)
-    .then(() => getBooks().then(resolve))
+    .then(() => getBooks(bookObj.user_id).then(resolve))
     .catch(reject);
 });
 
 // SEARCH BOOKS
 
 // FILTER BOOKS
-const booksOnSale = () => new Promise((resolve, reject) => {
-  axios
-    .get(`${dbUrl}/books/.json?orderBy="sale"&equalTo=true`)
-    .then((response) => resolve(Object.values(response.data)))
-    .catch((error) => reject(error));
+const booksOnSale = (userId) => new Promise((resolve, reject) => {
+  getBooks(userId)
+    .then((userBooks) => {
+      const onSaleBooks = userBooks.filter((userBook) => (userBook.sale));
+      console.warn(onSaleBooks);
+      resolve(onSaleBooks);
+    })
+    .catch(reject);
 });
 
 const authorBooks = (firebaseKey) => new Promise((resolve, reject) => {
@@ -75,5 +78,5 @@ export {
   deleteBook,
   singleBook,
   updateBook,
-  authorBooks,
+  authorBooks
 };
